@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33130.400
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HomeTask2", "HomeTask2\HomeTask2.vcxproj", "{F0B601E7-4F25-4BC0-B41F-BAD2DD113CFB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F0B601E7-4F25-4BC0-B41F-BAD2DD113CFB}.Debug|x64.ActiveCfg = Debug|x64
+		{F0B601E7-4F25-4BC0-B41F-BAD2DD113CFB}.Debug|x64.Build.0 = Debug|x64
+		{F0B601E7-4F25-4BC0-B41F-BAD2DD113CFB}.Debug|x86.ActiveCfg = Debug|Win32
+		{F0B601E7-4F25-4BC0-B41F-BAD2DD113CFB}.Debug|x86.Build.0 = Debug|Win32
+		{F0B601E7-4F25-4BC0-B41F-BAD2DD113CFB}.Release|x64.ActiveCfg = Release|x64
+		{F0B601E7-4F25-4BC0-B41F-BAD2DD113CFB}.Release|x64.Build.0 = Release|x64
+		{F0B601E7-4F25-4BC0-B41F-BAD2DD113CFB}.Release|x86.ActiveCfg = Release|Win32
+		{F0B601E7-4F25-4BC0-B41F-BAD2DD113CFB}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C98E4660-1B71-4E91-8956-03CF80B512B6}
+	EndGlobalSection
+EndGlobal
