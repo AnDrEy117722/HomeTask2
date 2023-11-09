@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 
 #include <iostream>
 using namespace std;
@@ -258,24 +258,24 @@ void DoubleLinkedList<Type>::move(Type firstElement, Type secondElement) {
 		Node* prev_firstElement_node = firstElement_node->prev;
 		Node* next_secondElement_node = secondElement_node->next;
 		Node* prev_secondElement_node = secondElement_node->prev;
-		//Первый элемент стоит перед вторым
+		//РџРµСЂРІС‹Р№ СЌР»РµРјРµРЅС‚ СЃС‚РѕРёС‚ РїРµСЂРµРґ РІС‚РѕСЂС‹Рј
 		if (firstElement_node->next == secondElement_node) {
-			//Первый элемент не является первым в списке, второй элемент не является последним
+			//РџРµСЂРІС‹Р№ СЌР»РµРјРµРЅС‚ РЅРµ СЏРІР»СЏРµС‚СЃСЏ РїРµСЂРІС‹Рј РІ СЃРїРёСЃРєРµ, РІС‚РѕСЂРѕР№ СЌР»РµРјРµРЅС‚ РЅРµ СЏРІР»СЏРµС‚СЃСЏ РїРѕСЃР»РµРґРЅРёРј
 			if (prev_firstElement_node != nullptr && next_secondElement_node != nullptr) {
 				prev_firstElement_node->next = secondElement_node;
 				next_secondElement_node->prev = firstElement_node;
 			}
-			//Первый элемент является первым в списке, второй элемент не является последним
+			//РџРµСЂРІС‹Р№ СЌР»РµРјРµРЅС‚ СЏРІР»СЏРµС‚СЃСЏ РїРµСЂРІС‹Рј РІ СЃРїРёСЃРєРµ, РІС‚РѕСЂРѕР№ СЌР»РµРјРµРЅС‚ РЅРµ СЏРІР»СЏРµС‚СЃСЏ РїРѕСЃР»РµРґРЅРёРј
 			else if (prev_firstElement_node == nullptr && next_secondElement_node != nullptr) {
 				next_secondElement_node->prev = firstElement_node;
 				head->next = secondElement_node;
 			}
-			//Первый элемент не является первым в списке, второй элемент является последним
+			//РџРµСЂРІС‹Р№ СЌР»РµРјРµРЅС‚ РЅРµ СЏРІР»СЏРµС‚СЃСЏ РїРµСЂРІС‹Рј РІ СЃРїРёСЃРєРµ, РІС‚РѕСЂРѕР№ СЌР»РµРјРµРЅС‚ СЏРІР»СЏРµС‚СЃСЏ РїРѕСЃР»РµРґРЅРёРј
 			else if (prev_firstElement_node != nullptr && next_secondElement_node == nullptr) {
 				prev_firstElement_node->next = secondElement_node;
 				end->prev = firstElement_node;
 			}
-			//Первый элемент является первым в списке, второй элемент является последним
+			//РџРµСЂРІС‹Р№ СЌР»РµРјРµРЅС‚ СЏРІР»СЏРµС‚СЃСЏ РїРµСЂРІС‹Рј РІ СЃРїРёСЃРєРµ, РІС‚РѕСЂРѕР№ СЌР»РµРјРµРЅС‚ СЏРІР»СЏРµС‚СЃСЏ РїРѕСЃР»РµРґРЅРёРј
 			else if (prev_firstElement_node == nullptr && next_secondElement_node == nullptr) {
 				head->next = secondElement_node;
 				end->prev = firstElement_node;
@@ -285,24 +285,24 @@ void DoubleLinkedList<Type>::move(Type firstElement, Type secondElement) {
 			secondElement_node->next = firstElement_node;
 			secondElement_node->prev = prev_firstElement_node;
 		}
-		//Второй элемент стоит перед первым
+		//Р’С‚РѕСЂРѕР№ СЌР»РµРјРµРЅС‚ СЃС‚РѕРёС‚ РїРµСЂРµРґ РїРµСЂРІС‹Рј
 		else if (secondElement_node->next == firstElement_node) {
-			//Второй элемент не является первым в списке, первый элемент не является последним
+			//Р’С‚РѕСЂРѕР№ СЌР»РµРјРµРЅС‚ РЅРµ СЏРІР»СЏРµС‚СЃСЏ РїРµСЂРІС‹Рј РІ СЃРїРёСЃРєРµ, РїРµСЂРІС‹Р№ СЌР»РµРјРµРЅС‚ РЅРµ СЏРІР»СЏРµС‚СЃСЏ РїРѕСЃР»РµРґРЅРёРј
 			if (prev_secondElement_node != nullptr && next_firstElement_node != nullptr) {
 				prev_secondElement_node->next = firstElement_node;
 				next_firstElement_node->prev = secondElement_node;
 			}
-			//Второй элемент является первым в списке, первый элемент не является последним
+			//Р’С‚РѕСЂРѕР№ СЌР»РµРјРµРЅС‚ СЏРІР»СЏРµС‚СЃСЏ РїРµСЂРІС‹Рј РІ СЃРїРёСЃРєРµ, РїРµСЂРІС‹Р№ СЌР»РµРјРµРЅС‚ РЅРµ СЏРІР»СЏРµС‚СЃСЏ РїРѕСЃР»РµРґРЅРёРј
 			else if (prev_secondElement_node == nullptr && next_firstElement_node != nullptr) {
 				next_firstElement_node->prev = secondElement_node;
 				head->next = firstElement_node;
 			}
-			//Второй элемент не является первым в списке, первый элемент является последним
+			//Р’С‚РѕСЂРѕР№ СЌР»РµРјРµРЅС‚ РЅРµ СЏРІР»СЏРµС‚СЃСЏ РїРµСЂРІС‹Рј РІ СЃРїРёСЃРєРµ, РїРµСЂРІС‹Р№ СЌР»РµРјРµРЅС‚ СЏРІР»СЏРµС‚СЃСЏ РїРѕСЃР»РµРґРЅРёРј
 			else if (prev_secondElement_node != nullptr && next_firstElement_node == nullptr) {
 				prev_secondElement_node->next = firstElement_node;
 				end->prev = secondElement_node;
 			}
-			//Второй элемент является первым в списке, первый элемент является последним
+			//Р’С‚РѕСЂРѕР№ СЌР»РµРјРµРЅС‚ СЏРІР»СЏРµС‚СЃСЏ РїРµСЂРІС‹Рј РІ СЃРїРёСЃРєРµ, РїРµСЂРІС‹Р№ СЌР»РµРјРµРЅС‚ СЏРІР»СЏРµС‚СЃСЏ РїРѕСЃР»РµРґРЅРёРј
 			else if (prev_secondElement_node == nullptr && next_firstElement_node == nullptr) {
 				head->next = firstElement_node;
 				end->prev = secondElement_node;
@@ -312,9 +312,9 @@ void DoubleLinkedList<Type>::move(Type firstElement, Type secondElement) {
 			firstElement_node->next = secondElement_node;
 			firstElement_node->prev = prev_secondElement_node;
 		}
-		//Первый и второй элемент не являются соседями
+		//РџРµСЂРІС‹Р№ Рё РІС‚РѕСЂРѕР№ СЌР»РµРјРµРЅС‚ РЅРµ СЏРІР»СЏСЋС‚СЃСЏ СЃРѕСЃРµРґСЏРјРё
 		else {
-			//Слева и справа от первого и второго элемента есть соседи
+			//РЎР»РµРІР° Рё СЃРїСЂР°РІР° РѕС‚ РїРµСЂРІРѕРіРѕ Рё РІС‚РѕСЂРѕРіРѕ СЌР»РµРјРµРЅС‚Р° РµСЃС‚СЊ СЃРѕСЃРµРґРё
 			if (firstElement_node->next != nullptr && firstElement_node->prev != nullptr &&
 				secondElement_node->next != nullptr && secondElement_node->prev != nullptr) {
 				next_firstElement_node->prev = secondElement_node;
@@ -322,7 +322,7 @@ void DoubleLinkedList<Type>::move(Type firstElement, Type secondElement) {
 				next_secondElement_node->prev = firstElement_node;
 				prev_secondElement_node->next = firstElement_node;
 			}
-			//Слева и справа от второго элемента есть соседи, первый элемент является последним в списке
+			//РЎР»РµРІР° Рё СЃРїСЂР°РІР° РѕС‚ РІС‚РѕСЂРѕРіРѕ СЌР»РµРјРµРЅС‚Р° РµСЃС‚СЊ СЃРѕСЃРµРґРё, РїРµСЂРІС‹Р№ СЌР»РµРјРµРЅС‚ СЏРІР»СЏРµС‚СЃСЏ РїРѕСЃР»РµРґРЅРёРј РІ СЃРїРёСЃРєРµ
 			else if (firstElement_node->next == nullptr && firstElement_node->prev != nullptr &&
 				secondElement_node->next != nullptr && secondElement_node->prev != nullptr) {
 				prev_firstElement_node->next = secondElement_node;
@@ -330,7 +330,7 @@ void DoubleLinkedList<Type>::move(Type firstElement, Type secondElement) {
 				prev_secondElement_node->next = firstElement_node;
 				end->prev = secondElement_node;
 			}
-			//Слева и справа от первого элемента есть соседи, второй элемент является последним в списке
+			//РЎР»РµРІР° Рё СЃРїСЂР°РІР° РѕС‚ РїРµСЂРІРѕРіРѕ СЌР»РµРјРµРЅС‚Р° РµСЃС‚СЊ СЃРѕСЃРµРґРё, РІС‚РѕСЂРѕР№ СЌР»РµРјРµРЅС‚ СЏРІР»СЏРµС‚СЃСЏ РїРѕСЃР»РµРґРЅРёРј РІ СЃРїРёСЃРєРµ
 			else if (firstElement_node->next != nullptr && firstElement_node->prev != nullptr &&
 				secondElement_node->next == nullptr && secondElement_node->prev != nullptr) {
 				next_firstElement_node->prev = secondElement_node;
@@ -338,7 +338,7 @@ void DoubleLinkedList<Type>::move(Type firstElement, Type secondElement) {
 				prev_secondElement_node->next = firstElement_node;
 				end->prev = firstElement_node;
 			}
-			//Слева и справа от второго элемента есть соседи, первый элемент является первым в списке
+			//РЎР»РµРІР° Рё СЃРїСЂР°РІР° РѕС‚ РІС‚РѕСЂРѕРіРѕ СЌР»РµРјРµРЅС‚Р° РµСЃС‚СЊ СЃРѕСЃРµРґРё, РїРµСЂРІС‹Р№ СЌР»РµРјРµРЅС‚ СЏРІР»СЏРµС‚СЃСЏ РїРµСЂРІС‹Рј РІ СЃРїРёСЃРєРµ
 			else if (firstElement_node->next != nullptr && firstElement_node->prev == nullptr &&
 				secondElement_node->next != nullptr && secondElement_node->prev != nullptr) {
 				next_firstElement_node->prev = secondElement_node;
@@ -346,7 +346,7 @@ void DoubleLinkedList<Type>::move(Type firstElement, Type secondElement) {
 				prev_secondElement_node->next = firstElement_node;
 				head->next = secondElement_node;
 			}
-			//Слева и справа от первого элемента есть соседи, второй элемент является первым в списке
+			//РЎР»РµРІР° Рё СЃРїСЂР°РІР° РѕС‚ РїРµСЂРІРѕРіРѕ СЌР»РµРјРµРЅС‚Р° РµСЃС‚СЊ СЃРѕСЃРµРґРё, РІС‚РѕСЂРѕР№ СЌР»РµРјРµРЅС‚ СЏРІР»СЏРµС‚СЃСЏ РїРµСЂРІС‹Рј РІ СЃРїРёСЃРєРµ
 			else if (firstElement_node->next != nullptr && firstElement_node->prev != nullptr &&
 				secondElement_node->next != nullptr && secondElement_node->prev == nullptr) {
 				next_firstElement_node->prev = secondElement_node;
@@ -354,7 +354,7 @@ void DoubleLinkedList<Type>::move(Type firstElement, Type secondElement) {
 				next_secondElement_node->prev = firstElement_node;
 				head->next = firstElement_node;
 			}
-			//Второй элемент является первым в списке, первый элемент является последним в списке
+			//Р’С‚РѕСЂРѕР№ СЌР»РµРјРµРЅС‚ СЏРІР»СЏРµС‚СЃСЏ РїРµСЂРІС‹Рј РІ СЃРїРёСЃРєРµ, РїРµСЂРІС‹Р№ СЌР»РµРјРµРЅС‚ СЏРІР»СЏРµС‚СЃСЏ РїРѕСЃР»РµРґРЅРёРј РІ СЃРїРёСЃРєРµ
 			else if (firstElement_node->next == nullptr && firstElement_node->prev != nullptr &&
 				secondElement_node->next != nullptr && secondElement_node->prev == nullptr) {
 				prev_firstElement_node->next = secondElement_node;
@@ -362,7 +362,7 @@ void DoubleLinkedList<Type>::move(Type firstElement, Type secondElement) {
 				head->next = firstElement_node;
 				end->prev = secondElement_node;
 			}
-			//Первый элемент является первым в списке, второй элемент является последним в списке
+			//РџРµСЂРІС‹Р№ СЌР»РµРјРµРЅС‚ СЏРІР»СЏРµС‚СЃСЏ РїРµСЂРІС‹Рј РІ СЃРїРёСЃРєРµ, РІС‚РѕСЂРѕР№ СЌР»РµРјРµРЅС‚ СЏРІР»СЏРµС‚СЃСЏ РїРѕСЃР»РµРґРЅРёРј РІ СЃРїРёСЃРєРµ
 			else if (firstElement_node->next != nullptr && firstElement_node->prev == nullptr &&
 				secondElement_node->next == nullptr && secondElement_node->prev != nullptr) {
 				next_firstElement_node->prev = secondElement_node;
@@ -431,7 +431,7 @@ void DoubleLinkedList<Type>::mergesort(Node** firstElement) {
 	Node* a = nullptr;
 	Node* b = nullptr;
 
-	// разделить `firstElement` на подсписки `a` и `b`
+	// СЂР°Р·РґРµР»РёС‚СЊ `firstElement` РЅР° РїРѕРґСЃРїРёСЃРєРё `a` Рё `b`
 	frontBackSplit(*firstElement, &a, &b);
 
 	mergesort(&a);
@@ -445,7 +445,7 @@ void DoubleLinkedList<Type>::mergesort(Node** firstElement) {
 template <class Type>
 void DoubleLinkedList<Type>::frontBackSplit(Node* source, Node** frontRef, Node** backRef) {
 
-	// если длина меньше 2, обрабатывать отдельно
+	// РµСЃР»Рё РґР»РёРЅР° РјРµРЅСЊС€Рµ 2, РѕР±СЂР°Р±Р°С‚С‹РІР°С‚СЊ РѕС‚РґРµР»СЊРЅРѕ
 	if (source == nullptr || source->next == nullptr)
 	{
 		*frontRef = source;
@@ -456,7 +456,7 @@ void DoubleLinkedList<Type>::frontBackSplit(Node* source, Node** frontRef, Node*
 	Node* slow = source;
 	Node* fast = source->next;
 
-	// продвигаем `fast` на два узла и продвигаем `slow` на один узел
+	// РїСЂРѕРґРІРёРіР°РµРј `fast` РЅР° РґРІР° СѓР·Р»Р° Рё РїСЂРѕРґРІРёРіР°РµРј `slow` РЅР° РѕРґРёРЅ СѓР·РµР»
 	while (fast != nullptr)
 	{
 		fast = fast->next;
@@ -467,7 +467,7 @@ void DoubleLinkedList<Type>::frontBackSplit(Node* source, Node** frontRef, Node*
 		}
 	}
 
-	// `slow` находится перед средней точкой в списке, поэтому разделим его на две части
+	// `slow` РЅР°С…РѕРґРёС‚СЃСЏ РїРµСЂРµРґ СЃСЂРµРґРЅРµР№ С‚РѕС‡РєРѕР№ РІ СЃРїРёСЃРєРµ, РїРѕСЌС‚РѕРјСѓ СЂР°Р·РґРµР»РёРј РµРіРѕ РЅР° РґРІРµ С‡Р°СЃС‚Рё
 	*frontRef = source;
 	*backRef = slow->next;
 	slow->next = nullptr;
@@ -477,7 +477,7 @@ void DoubleLinkedList<Type>::frontBackSplit(Node* source, Node** frontRef, Node*
 template <class Type>
 typename DoubleLinkedList<Type>::Node* DoubleLinkedList<Type>::sortedMerge(Node* a, Node* b) {
 
-	// базовые случаи
+	// Р±Р°Р·РѕРІС‹Рµ СЃР»СѓС‡Р°Рё
 	if (a == nullptr) {
 		return b;
 	}
@@ -487,7 +487,7 @@ typename DoubleLinkedList<Type>::Node* DoubleLinkedList<Type>::sortedMerge(Node*
 
 	Node* result = nullptr;
 
-	// выбираем `a` или `b` и повторяем
+	// РІС‹Р±РёСЂР°РµРј `a` РёР»Рё `b` Рё РїРѕРІС‚РѕСЂСЏРµРј
 	if (funcComparator(b->value, a->value))
 	{
 		result = a;
